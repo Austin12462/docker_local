@@ -8,7 +8,7 @@
         <server>
             <id>rbc-app-release</id>
             <username>admin</username>
-            <password>root</password>
+            <password>admin123</password>
         </server>
     </servers>
 </settings>
