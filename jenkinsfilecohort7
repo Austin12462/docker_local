@@ -6,7 +6,7 @@ pipeline{
   stages{
     stage("1.CodeClone"){
       steps{
-        git credentialsId: 'Github-Cred', url: 'https://github.com/team16flight/web-app.git'
+        git credentialsId: 'Github-Cred', url: 'https://github.com/Austin12462/docker_local.git'
       }
     }
     stage("2.Build"){
@@ -26,7 +26,7 @@ pipeline{
     }
     stage("5.DeploytoUAT"){
       steps{
-        deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:8080//')], contextPath: null, war: 'target/*.war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:4800//')], contextPath: null, war: 'target/*.war'
       }
     }
     stage("6.Approval"){
@@ -38,7 +38,7 @@ pipeline{
   }
     stage("7.deploytoPROD"){
       steps{
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://54.226.118.23:8080/')], contextPath: null, war: 'target/*.war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:4800/')], contextPath: null, war: 'target/*.war'
       }
     }
     stage("8.EmailNotification"){
