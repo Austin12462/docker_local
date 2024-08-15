@@ -6,7 +6,7 @@ pipeline{
   stages {
     stage('Git Clone'){
       steps{
-        git branch: 'main', url: 'https://github.com/ifediniru/docker_local.git'
+        git branch: 'main', url: 'https://github.com/Austin12462/docker_local.git'
       }
     }
     // stage('Build containers'){
