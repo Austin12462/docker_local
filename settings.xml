@@ -3,7 +3,7 @@
         <server>
             <id>rba-app-snapshot</id>
             <username>admin</username>
-            <password>root</password>
+            <password>admin123</password>
         </server>
         <server>
             <id>rbc-app-release</id>
