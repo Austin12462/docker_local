@@ -1,0 +1,24 @@
+node {
+    def MVN = tool name: "maven3.9"
+    stage ('clone repository'){
+        git branch: 'main', url: 'https://github.com/Austin12462/docker_local.git'
+        
+    }
+    stage ('building'){
+        sh "echo Building artifacts"
+        sh "${MVN}/bin/mvn package"
+        sh "echo Build is completed"
+    
+    }
+    stage ('Testing'){
+        sh "echo Testing on sonarqube"
+        sh "${MVN}/bin/mvn sonar:sonar"
+        sh "echo Test is completed"
+    }    
+    stage ('Deploy to Tomcat'){
+        sh "echo Deploying to Tomcat"
+        deploy adapters: [tomcat9(credentialsId: 'tomcat2', path: '', url: 'http://tomcat-original:8080')], contextPath: null, war: 'target/*.war'
+        sh "echo Deploy to Tomcat is completed"
+    }    
+} 
+ 
