@@ -1,6 +1,6 @@
 node {
     def MVN = tool name: "maven3.9"
-    stage ('clone repository'){
+    stage ("clone repository from github"){
         git branch: 'main', url: 'https://github.com/Austin12462/docker_local.git'
         
     }
