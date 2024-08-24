@@ -1,12 +1,12 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.1.0">
     <servers>
         <server>
-            <id>rba-app-snapshot</id>
+            <id>acada-snapshot</id>
             <username>admin</username>
             <password>admin123</password>
         </server>
         <server>
-            <id>rbc-app-release</id>
+            <id>racada-release</id>
             <username>admin</username>
             <password>admin123</password>
         </server>
